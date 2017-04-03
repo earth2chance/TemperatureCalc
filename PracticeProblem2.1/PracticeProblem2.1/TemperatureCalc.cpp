@@ -13,8 +13,18 @@ int main(){
 	std::cout << "What was the temperature, in celsius, at 12:00 pm? ";
 	std::cin >> temp2;
 
+	if (temp2 < temp1) {
+		std::cout << "Error, temperature cannnot be lower than previous input. " << std::endl;
+		return 0;
+	}
+
 	std::cout << "What was the temperature, in celsius, at 5:00 pm? ";
 	std::cin >> temp3;
+
+	if (temp3 == (temp2 + 10)){
+		std::cout << "Error, temperature cannot be more than 10 degrees higher than previous input. " << std::endl;
+		return 0;
+	}
 
 	tempf1 = temp1 * (9.0 / 5.0) + 32;
 	tempf2 = temp2 * (9.0 / 5.0) + 32;
